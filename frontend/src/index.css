@@ -1,0 +1,150 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Adjust padding as needed */
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  margin-right: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+
+
+.a .nav-link {
+  font-weight: bold !important;
+}
+
+
+/* Dropdown styles */
+.navbar-nav .nav-item.dropdown {
+  position: relative;
+}
+
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  background-color: #333;
+}
+
+.navbar-nav .nav-item.dropdown:hover .nav-link {
+  color: #fff;
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-menu {
+  display: none;
+}
+
+.navbar-nav .nav-item.dropdown:not(:hover) .dropdown-menu {
+  display: none;
+}
+
+.navbar-nav .nav-item.dropdown .nav-link::after {
+  display: inline-block;
+  margin-left: 5px;
+  content: '';
+  border: 4px solid transparent;
+  border-top-color: #fff;
+  position: relative;
+  top: -2px;
+}
+
+/* Responsive styles */
+@media (max-width: 770px) {
+  .navbar-toggler[aria-expanded="true"] + .navbar-nav {
+    display: block;
+  }
+
+  .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
+  .navbar-nav .nav-item.dropdown .nav-link::after {
+    display: none;
+  }
+}
+
+
+/* Register section styles */
+.register {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  height: 60vh;
+  flex-direction: column;
+  padding-top: 90px;
+  text-align: center;
+}
+
+.btn {
+  width: 210px;
+}
+
+/* Footer styles */
+.footer {
+  background-color: rgb(41, 107, 91);
+  color: black;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Additional spacing */
+.footer p,
+.footer ul {
+  margin-bottom: 10px;
+}
+.navadashbtn{
+width: 100px;
+}
+
+
+
+
+.product-link {
+  text-decoration: none;
+}
+
+
+
+
+
+
