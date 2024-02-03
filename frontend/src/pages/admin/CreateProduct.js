@@ -22,7 +22,7 @@ const CreateProduct = () => {
   const getAllCategories = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/category/get-category"
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/category/get-category`
       );
       if (data?.success) {
         setCategories(data?.categories);
@@ -63,7 +63,7 @@ const CreateProduct = () => {
       formData.append("photo", photo);
 
       const response = await axios.post(
-        "http://localhost:4000/api/v1/product/add-product",
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/product/add-product`,
         formData
       );
 

@@ -20,7 +20,7 @@ const Login = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/v1/auth/login", // Add http:// or https:// here
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/auth/login`, 
         {
           email,
           password,

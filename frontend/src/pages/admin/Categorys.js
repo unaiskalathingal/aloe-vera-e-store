@@ -14,7 +14,7 @@ const Categories = () => {
   const getAllCategories = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:4000/api/v1/category/get-category`
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/category/get-category`
       );
       setCategories(data.categories);
     } catch (error) {
@@ -40,7 +40,7 @@ const Categories = () => {
               <div className="col-md-4 mb-3" key={c._id}>
                 <Link key={c._id} to={`/Dashboard/admin/Category/${c._id}`} className="text-decoration-none">
                   <Card className="card" style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src={`http://localhost:4000/api/v1/Category/Category-photo/${c._id}`} alt={c.name} />
+                    <Card.Img variant="top" src={`${process.env.REACT_APP_API_BASE_URL}/api/v1/Category/Category-photo/${c._id}`} alt={c.name} />
                     <Card.Body>
                       <Card.Title>{c.name}</Card.Title>
                      

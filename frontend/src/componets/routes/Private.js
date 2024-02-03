@@ -12,7 +12,7 @@ export default function PrivateRoute() {
     const authCheck = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:4000/api/v1/auth/user-auth"
+          `${process.env.REACT_APP_API_BASE_URL}/api/v1/auth/user-auth`
         );
         if (res.data.ok) {
           setOk(true);

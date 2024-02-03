@@ -18,7 +18,7 @@ const ForgetPassword = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        'http://localhost:4000/api/v1/auth/forgot-password',
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/auth/forgot-password`,
         { email }
       );
 
@@ -42,7 +42,7 @@ const ForgetPassword = () => {
     try {
       setLoading(true);
       const verificationRes = await axios.post(
-        'http://localhost:4000/api/v1/auth/verify-otp',
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/auth/verify-otp`,
         { email, otp }
       );
 
@@ -66,7 +66,7 @@ const ForgetPassword = () => {
     try {
       setLoading(true);
       const resetRes = await axios.post(
-        'http://localhost:4000/api/v1/auth/reset-password',
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/auth/reset-password`,
         { email, otp, newPassword }
       );
 

@@ -58,7 +58,7 @@ const CartPage = () => {
         console.log("Processing Cash on Delivery...");
   
         const response = await axios.post(
-          "http://localhost:4000/api/v1/product/cod/checkout",
+          `${process.env.REACT_APP_API_BASE_URL}/api/v1/product/cod/checkout`,
           {
             cart,
           }
@@ -84,7 +84,7 @@ const CartPage = () => {
         console.log("Processing Razorpay Payment...");
   
         const response = await axios.post(
-          "http://localhost:4000/api/v1/product/razorpay/checkout",
+          `${process.env.REACT_APP_API_BASE_URL}/api/v1/product/razorpay/checkout`,
           {
             cart,
           }
@@ -168,7 +168,7 @@ const CartPage = () => {
                 <div className="col-md-4">
                   <img
                     className="card-img-top"
-                    src={`http://localhost:4000/api/v1/product/product-photo/${product._id}`}
+                    src={`${process.env.REACT_APP_API_BASE_URL}/api/v1/product/product-photo/${product._id}`}
                     alt={product.name}
                     style={{
                       height: "100px",

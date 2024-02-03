@@ -12,7 +12,7 @@ const Orders = () => {
   const getOrders = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/auth/orders"
+       ` ${process.env.REACT_APP_API_BASE_URL}/api/v1/auth/orders`
       );
       setOrders(data);
       
@@ -55,7 +55,7 @@ const Orders = () => {
                       {order.products.map((product, productIndex) => (
                         <div key={productIndex} style={{ marginRight: '10px' }}>
                           <img
-                            src={`http://localhost:4000/api/v1/product/product-photo/${product._id}`}
+                            src={`${process.env.REACT_APP_API_BASE_URL}/api/v1/product/product-photo/${product._id}`}
                             alt={product.name}
                             style={{ width: '150px', height: '100px' }}
                           />

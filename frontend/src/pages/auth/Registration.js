@@ -45,7 +45,7 @@ const RegistrationForm = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/v1/auth/register",
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/auth/register`,
         formData
       );
 

@@ -22,7 +22,7 @@ const UpdateProducts = () => {
   const getSingleProduct = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:4000/api/v1/product/get-product/${params.id}`
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/product/get-product/${params.id}`
       );
 
       setName(data.product.name);
@@ -43,7 +43,7 @@ const UpdateProducts = () => {
   const getAllCategories = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/category/get-category"
+       ` ${process.env.REACT_APP_API_BASE_URL}/api/v1/category/get-category`
       );
       if (data?.success) {
         setCategories(data?.categories);
@@ -86,7 +86,7 @@ const UpdateProducts = () => {
       }
 
       const response = await axios.put(
-        `http://localhost:4000/api/v1/product/update-product/${params.id}`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/product/update-product/${params.id}`,
         formData
       );
 
@@ -105,7 +105,7 @@ const UpdateProducts = () => {
         const confirmDeletion = window.confirm("Are you sure you want to delete this category?");
         if (confirmDeletion) {
             try {
-                const response = await axios.delete(`http://localhost:4000/api/v1/product/delete-product/${params.id}`);
+                const response = await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/api/v1/product/delete-product/${params.id}`);
       
                
                 if (response.data.success) {
@@ -171,7 +171,7 @@ const UpdateProducts = () => {
                   ) : (
                     <div className="text-center">
                       <img
-                        src={`http://localhost:4000/api/v1/product/product-photo/${params.id}`}
+                        src={`${process.env.REACT_APP_API_BASE_URL}/api/v1/product/product-photo/${params.id}`}
                         height={`200px`}
                         className="img img-reponsive"
                       />

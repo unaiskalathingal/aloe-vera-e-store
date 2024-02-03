@@ -16,7 +16,7 @@ const UpdateCategory = () => {
   const getSingleCategory = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:4000/api/v1/category/get-category/${params.id}`
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/category/get-category/${params.id}`
       );
 
       setName(data.getOne.name);
@@ -48,7 +48,7 @@ const UpdateCategory = () => {
       }
 
       const response = await axios.put(
-        `http://localhost:4000/api/v1/category/update-category/${params.id}`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/category/update-category/${params.id}`,
         formData
       );
 
@@ -71,7 +71,7 @@ const UpdateCategory = () => {
     if (confirmDeletion) {
       try {
         const response = await axios.delete(
-          `http://localhost:4000/api/v1/category/delete-category/${params.id}`
+          `${process.env.REACT_APP_API_BASE_URL}/api/v1/category/delete-category/${params.id}`
         );
 
         if (response.data.success) {
@@ -127,7 +127,7 @@ const UpdateCategory = () => {
                   ) : (
                     <div className="text-center">
                       <img
-                        src={`http://localhost:4000/api/v1/category/category-photo/${params.id}`}
+                        src={`${process.env.REACT_APP_API_BASE_URL}/api/v1/category/category-photo/${params.id}`}
                         height={`200px`}
                         className="img img-reponsive"
                         alt="Category"

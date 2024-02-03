@@ -44,7 +44,7 @@ const Profile = () => {
       };
 
       const res = await axios.put(
-        "http://localhost:4000/api/v1/auth/profile",
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/auth/profile`,
         dataToSend
       );
 

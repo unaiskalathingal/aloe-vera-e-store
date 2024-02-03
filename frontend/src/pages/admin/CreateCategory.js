@@ -35,7 +35,7 @@ const CreateCategory = () => {
       formData.append("photo", photo);
 
       const response = await axios.post(
-        "http://localhost:4000/api/v1/category/create-category",
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/category/create-category`,
         formData
       );
 

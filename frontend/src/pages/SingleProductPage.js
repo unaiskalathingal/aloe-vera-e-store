@@ -19,7 +19,7 @@ const ProductDetails = () => {
     const fetchProductDetails = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:4000/api/v1/product/get-product/${productId}`
+          `${process.env.REACT_APP_API_BASE_URL}/api/v1/product/get-product/${productId}`
         );
 
         if (data.success && data.message === 'Product retrieved successfully') {
@@ -72,7 +72,7 @@ const ProductDetails = () => {
         <Card style={{ width: '28rem', textAlign: 'center' }}>
           <Card.Img
             variant="top"
-            src={`http://localhost:4000/api/v1/product/product-photo/${productId}`}
+            src={`${process.env.REACT_APP_API_BASE_URL}/api/v1/product/product-photo/${productId}`}
           />
           <Card.Body>
             <Card.Title>{product.name}</Card.Title>

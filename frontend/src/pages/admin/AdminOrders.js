@@ -18,7 +18,7 @@ const AdminOrders = () => {
   const getOrders = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/auth/allorders"
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/auth/allorders`
       );
       setOrders(data);
     } catch (error) {
@@ -33,7 +33,7 @@ const AdminOrders = () => {
   const handleStausChange = async (orderId, value) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/auth/order-status/${orderId}`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/auth/order-status/${orderId}`,
         { status: value }
       );
       getOrders();
@@ -87,7 +87,7 @@ const AdminOrders = () => {
                         {order.products.map((product, productIndex) => (
                           <div key={productIndex}>
                             <img
-                              src={`http://localhost:4000/api/v1/product/product-photo/${product._id}`}
+                              src={`${process.env.REACT_APP_API_BASE_URL}/api/v1/product/product-photo/${product._id}`}
                               alt={product.name}
                               style={{ width: "100px", height: "50px" }}
                             />

@@ -23,7 +23,7 @@ const ProductsByCategories = () => {
     const fetchCategoryAndProducts = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:4000/api/v1/product/get-products-by-category/${categoryId}`
+          `${process.env.REACT_APP_API_BASE_URL}/api/v1/product/get-products-by-category/${categoryId}`
         );
 
         if (data.success && data.message === 'Products retrieved successfully') {
@@ -97,7 +97,7 @@ const ProductsByCategories = () => {
                     {product.category.photo && (
                       <img
                         className="card-img-top"
-                        src={`http://localhost:4000/api/v1/product/product-photo/${product._id}`}
+                        src={`${process.env.REACT_APP_API_BASE_URL}/api/v1/product/product-photo/${product._id}`}
                         alt={product.name}
                         style={{ height: '160px', objectFit: 'cover' }}
                       />

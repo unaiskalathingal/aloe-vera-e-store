@@ -9,7 +9,7 @@ const HomeCategories = () => {
   const getCategories = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:4000/api/v1/category/get-category/`
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/category/get-category/`
       );
       setCategories(data?.categories);
     } catch (error) {
